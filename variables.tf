@@ -107,7 +107,7 @@ variable "admin_password" {
 variable "storage_account_name" {
   description = "Name of the storage account for Terraform state"
   type        = string
-  default     = "mystorageaccount01"
+  default     = "mystgaccount091d2ce85"
 }
 
 variable "storage_container_name" {
