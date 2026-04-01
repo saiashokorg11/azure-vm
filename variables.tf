@@ -1,7 +1,13 @@
-# this are the variables for the Azure VM deployment using Terraform
+# Azure VM Terraform Variables
+# ============================================================================
+# This file defines all configurable parameters for the Azure VM deployment.
+# All values can be overridden via terraform.tfvars or CLI arguments.
+# ============================================================================
+
+# Resource Group Variables
 
 variable "resource_group_name" {
-  description = "Name of the resource group"
+  description = "Name of the resource group for main application resources"
   type        = string
   default     = "MYRG012"
 }
@@ -11,6 +17,8 @@ variable "location" {
   type        = string
   default     = "West Europe"
 }
+
+# Virtual Network Variables
 
 variable "virtual_network_name" {
   description = "Name of the virtual network"
@@ -42,6 +50,8 @@ variable "network_interface_name" {
   default     = "myNIC01"
 }
 
+# Virtual Machine Variables
+
 variable "vm_name" {
   description = "Name of the virtual machine"
   type        = string
@@ -53,6 +63,8 @@ variable "vm_size" {
   type        = string
   default     = "Standard_DS1_v2"
 }
+
+# VM Image Variables
 
 variable "image_publisher" {
   description = "Publisher of the VM image"
@@ -84,6 +96,8 @@ variable "os_disk_name" {
   default     = "myOSDisk01"
 }
 
+# VM Admin Credentials Variables
+
 variable "computer_name" {
   description = "Computer name for the VM"
   type        = string
@@ -104,6 +118,8 @@ variable "admin_password" {
   sensitive   = true
 }
 
+# Storage Account & Terraform Backend Variables
+
 variable "storage_account_name" {
   description = "Name of the storage account for Terraform state"
   type        = string
@@ -121,6 +137,8 @@ variable "backend_resource_group_name" {
   type        = string
   default     = "tf-backend-rg-new"
 }
+
+# Tags
 
 variable "environment_tag" {
   description = "Environment tag"

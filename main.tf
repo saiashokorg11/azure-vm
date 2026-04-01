@@ -1,4 +1,6 @@
-# main config file
+
+# Azure Provider Configuration
+
 provider "azurerm" {
   features {
     resource_group {
@@ -7,7 +9,8 @@ provider "azurerm" {
   }
 }
 
-# Terraform Backend Resources
+# Terraform State Backend Resources
+
 resource "azurerm_resource_group" "backend" {
   name     = var.backend_resource_group_name
   location = var.location
@@ -32,15 +35,7 @@ resource "azurerm_storage_container" "tfstate" {
   container_access_type = "private"
 }
 
-/*
-terraform {
-  backend "azurerm" {
-    resource_group_name  = "tf-stage-azure-open-ai"
-    storage_account_name = "terraformstateopen2024ai"
-    container_name       = "terraformopenai2024"
-    key                  = "terraform.tfstate"
-  }
-}*/
+# Main Application Resources
 
 resource "azurerm_resource_group" "example" {
   name     = var.resource_group_name
