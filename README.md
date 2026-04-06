@@ -9,6 +9,10 @@ This Terraform configuration deploys a complete Azure infrastructure including:
 
 ## Quick Start
 
+### Sp Creation
+
+az ad sp create-for-rbac --name "mySaiashok" --role contributor --scopes /subscriptions/d2ce8592-e2e8-487f-9130-e2b5342b5a35/resourceGroups/static_rg --sdk-auth
+
 ### 1. Initialize
 ```bash
 terraform init
